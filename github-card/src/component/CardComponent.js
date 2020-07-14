@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import UserCard from "./UserCard";
 import FollowerCard from "./FollowerCard";
+import Col from "reactstrap/es/Col";
 
 class CardComponent extends React.Component {
 	state = {
@@ -31,12 +32,12 @@ class CardComponent extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<Col>
 				<UserCard user={this.state.user} />
 				{this.state.followers.map(follower => (
 					<FollowerCard key={follower.id} follower={follower}/>
 				))}
-			</div>
+			</Col>
 		)
 	}
 }

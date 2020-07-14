@@ -3,11 +3,15 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap'
+import "github-calendar/dist/github-calendar-responsive.css";
+import GitHubCalendar from "github-calendar";
+
+
 
 class UserCard extends React.Component {
     //   constructor() {}
-
     render() {
+        GitHubCalendar('.grid', 'Daemonlord92', { responsive: true})
         if (!this.props.user) {
             return (
                 <div>
@@ -23,6 +27,7 @@ class UserCard extends React.Component {
             <CardTitle className="name">{this.props.user.name}</CardTitle>
             <CardText className="username">{this.props.user.login}</CardText>
             <CardText>Location: {this.props.user.location}</CardText>
+            <div className='grid'></div>
         <CardText>
         Profile:
     <a href={`${this.props.user.html_url}`}>
